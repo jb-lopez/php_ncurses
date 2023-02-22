@@ -45,6 +45,10 @@
 typedef long zend_long;
 #endif
 
+#ifndef ulong
+   typedef unsigned long ulong;
+#endif
+
 #define IS_NCURSES_INITIALIZED() \
 		if (!NCURSES_G(registered_constants)) { \
 			php_error_docref(NULL TSRMLS_CC, E_WARNING, "You must initialize ncurses via ncurses_init(), before calling any ncurses functions."); \
